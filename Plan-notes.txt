@@ -1,0 +1,22 @@
+using Jan 2016 lTC PSF from
+https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/psf_text.html
+
+
+Goal
+CRUD to input all data in source data and additional comment field
+
+
+
+plan:
+
++Begin with MVC 4.6 template
+
++add CRUD functionaality for and DB with ID, NPI and comment
+
++expand model to account for additional fields
+
++add validation for all fields
+
+
+ 
+
