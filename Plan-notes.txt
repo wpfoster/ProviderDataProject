@@ -1,5 +1,10 @@
-using Jan 2016 lTC PSF from
-https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/psf_text.html
+-using Jan 2016 lTC PSF from
+-https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/psf_text.html
+
+switching to 4Q15, DEC15 Provider of Services data from
+https://www.cms.gov/Research-Statistics-Data-and-Systems/Downloadable-Public-Use-Files/Provider-of-Services/index.html
+data vailable in csv
+
 
 
 Goal
