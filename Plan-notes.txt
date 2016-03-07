@@ -16,7 +16,7 @@ plan:
 
 +Begin with MVC 4.6 template
 
-+add CRUD functionaality for and DB with ID, NPI and comment
++add CRUD functionaality for and DB with ID, CMS Certification Number (CCN) and comment
 
 +expand model to account for additional fields
 
