@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using LtcProviderData.Mapping;
 
 namespace LtcProviderData.Models
 {
@@ -23,6 +24,13 @@ namespace LtcProviderData.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new ProviderMapping());
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public static ApplicationDbContext Create()
