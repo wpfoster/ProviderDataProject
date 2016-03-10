@@ -1,0 +1,20 @@
+﻿@model LtcProviderData.Models.ProviderDetailViewModel
+@{
+    ViewBag.Title = "Provider Detail";
+}
+
+<h2>Provider Detail</h2>
+<div>
+    @Html.LabelFor(m => m.ID)
+    @Model.ID
+</div>
+
+<div>
+    @Html.LabelFor(m => m.CCN)
+    @Model.CCN
+</div>
+
+<div>
+    @Html.LabelFor(m => m.Comment)
+    @Model.Comment
+</div>
