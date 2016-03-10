@@ -17,17 +17,34 @@ namespace LtcProviderData.Controllers
             _dbContext = new ApplicationDbContext();
         }
 
-        // GET: Provider
-        // public ActionResult index()
+//INDEX OF ALL PROVIDERS
+        public ActionResult index()
+        {
+            var Providers = _dbContext.Set<Provider>().ToList();
+
+            IEnumerable<ProviderIndexViewModel> ViewModels = Providers.Select(provider => new ProviderIndexViewModel()
+            {
+                ID = provider.ID,
+                CCN = provider.CCN,
+                Comment = provider.Comment
+            });
+
+            return View(ViewModels);
 
 
+        }
+
+//CREATE PROVIDER
+        //GET
+        //return create view
         [HttpGet]
         public ActionResult Create()
         {
             return View(new ProviderCreateViewModel());
         }
 
-
+        //POST
+        //creating new provider record
         [HttpPost]
         public ActionResult Create(ProviderCreateViewModel viewModel)
         {

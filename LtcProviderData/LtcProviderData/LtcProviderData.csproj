@@ -178,6 +178,7 @@
     <Compile Include="Mapping\ProviderMapping.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ProviderIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProviderCreateViewModel.cs" />
@@ -240,6 +241,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Provider\Create.cshtml" />
+    <Content Include="Views\Provider\View.cshtml" />
+    <Content Include="Views\Provider\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

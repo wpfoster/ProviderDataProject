@@ -1,0 +1,32 @@
+﻿@model IEnumerable<LtcProviderData.Models.ProviderIndexViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>This is an index of Providers</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>CCN</th>
+        <th>Comment</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var ProviderIndexViewModel in Model)
+        {
+            <tr>
+                <td>@ProviderIndexViewModel.ID</td>
+                <td>@ProviderIndexViewModel.CCN</td>
+                <td>@ProviderIndexViewModel.Comment</td>
+            </tr>
+
+        }
+
+
+
+    </tbody>
+</table>
