@@ -74,21 +74,29 @@ namespace LtcProviderData.Controllers
             //var Provider = _dbContext.Set<Provider>().Single()
             //Provider provider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
 
-          Provider SingleProvider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            else
+            {
+                Provider SingleProvider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
 
 
-           var viewmodel = new ProviderDetailViewModel()
-           {
-               ID = SingleProvider.ID,
-               CCN = SingleProvider.CCN,
-               Comment = SingleProvider.Comment
-           };
+
+                var viewmodel = new ProviderDetailViewModel()
+                {
+                    ID = SingleProvider.ID,
+                    CCN = SingleProvider.CCN,
+                    Comment = SingleProvider.Comment
+                };
 
 
 
-            return View(viewmodel);
+                return View(viewmodel);
 
-
+            }
 
 
 
