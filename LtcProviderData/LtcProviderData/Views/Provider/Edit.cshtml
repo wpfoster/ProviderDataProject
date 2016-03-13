@@ -1,0 +1,29 @@
+﻿@model LtcProviderData.Data.Provider
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add New Provider</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.CCN)
+        @Model.ID
+        
+    </div>
+
+       <div>
+        @Html.LabelFor(m => m.CCN)
+        @Html.TextBoxFor(m => m.CCN)
+        @Html.ValidationMessageFor(m => m.CCN)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Comment)
+        @Html.TextBoxFor(m => m.Comment)
+        @Html.ValidationMessageFor(m => m.Comment)
+    </div>
+
+    <button type="submit">Add</button>
+
+}

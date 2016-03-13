@@ -61,18 +61,10 @@ namespace LtcProviderData.Controllers
         }
 
 
-        //detail
+ //detail view of individual provider
         //[Route("detail/{id:int}")]
         public ActionResult Detail(int? id)
         {
-
-            //if (id == null)
-            //{
-            //    return HttpNotFound();
-            //}
-
-            //var Provider = _dbContext.Set<Provider>().Single()
-            //Provider provider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
 
             if (id == null)
             {
@@ -82,30 +74,60 @@ namespace LtcProviderData.Controllers
             else
             {
                 Provider SingleProvider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
-
-
-
                 var viewmodel = new ProviderDetailViewModel()
                 {
                     ID = SingleProvider.ID,
                     CCN = SingleProvider.CCN,
                     Comment = SingleProvider.Comment
                 };
-
-
-
                 return View(viewmodel);
-
             }
-
-
-
-
-
-
         }
 
-        
 
+
+        //edit single record
+        //[Route("edit/{id:int}")]
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            else
+            {
+                //Provider SingleProvider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
+                //var viewmodel = new ProviderEditViewModel()
+                //{
+                //    ID = SingleProvider.ID,
+                //    CCN = SingleProvider.CCN,
+                //    Comment = SingleProvider.Comment
+                //};
+
+
+                Provider provider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
+
+
+
+                return View(provider);
+            }
+        }
+        [HttpPost]
+        public ActionResult Edit([Bind(Include = "ID,CCN,Comment")] Provider provider)
+        {
+            if (ModelState.IsValid)
+            {
+                _dbContext.Entry(provider).State = System.Data.Entity.EntityState.Modified;
+                _dbContext.SaveChanges();
+                return RedirectToAction("index");
+            }
+            return View(provider);
+        }
+
+        //delete single record
+        //public ActionResult Delete() { }
     }
 }
