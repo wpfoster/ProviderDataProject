@@ -1,0 +1,28 @@
+﻿@model LtcProviderData.Models.ProviderDeleteViewModel
+@{
+    ViewBag.Title = "Delete Provider";
+}
+
+<h2>Provider Detail</h2>
+<h3>Confirm Deletion</h3>
+<div>
+    @Html.LabelFor(m => m.ID)
+    @Model.ID
+</div>
+
+<div>
+    @Html.LabelFor(m => m.CCN)
+    @Model.CCN
+</div>
+
+<div>
+    @Html.LabelFor(m => m.Comment)
+    @Model.Comment
+</div>
+
+@using (Html.BeginForm()) {
+<diiv>
+    <button type="submit" value="Delete">Delete</button>
+</diiv>
+
+}

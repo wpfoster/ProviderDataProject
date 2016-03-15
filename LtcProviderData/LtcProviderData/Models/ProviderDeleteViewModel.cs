@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LtcProviderData.Models
 {
-    public class ProviderEditViewModel
+    public class ProviderDeleteViewModel
     {
         public int ID { get; set; }
         public int CCN { get; set; }

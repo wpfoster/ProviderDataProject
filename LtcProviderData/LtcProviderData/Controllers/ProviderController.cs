@@ -128,6 +128,29 @@ namespace LtcProviderData.Controllers
         }
 
         //delete single record
-        //public ActionResult Delete() { }
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            Provider provider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
+            var viewmodel = new ProviderDeleteViewModel()
+            {
+                ID = provider.ID,
+                CCN = provider.CCN,
+                Comment = provider.Comment
+            };
+
+            return View(viewmodel);
+
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            Provider provider =_dbContext.Set<Provider>().Find(id);
+            _dbContext.Set<Provider>().Remove(provider);
+            _dbContext.SaveChanges();
+            return RedirectToAction("index");
+            
+        }
     }
 }
