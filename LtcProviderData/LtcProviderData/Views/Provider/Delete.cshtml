@@ -16,9 +16,15 @@
 </div>
 
 <div>
+    @Html.LabelFor(m => m.FAC_NAME)
+    @Model.FAC_NAME
+</div>
+
+<div>
     @Html.LabelFor(m => m.Comment)
     @Model.Comment
 </div>
+
 
 @using (Html.BeginForm()) {
 <diiv>

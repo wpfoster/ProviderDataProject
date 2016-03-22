@@ -26,7 +26,26 @@ namespace LtcProviderData.Controllers
             {
                 ID = provider.ID,
                 CCN = provider.CCN,
-                Comment = provider.Comment
+                BED_CNT = provider.BED_CNT,
+                FAC_NAME = provider.FAC_NAME,
+                //ST_ADR = provider.ST_ADR,
+                CITY_NAME = provider.CITY_NAME,
+                //ZIP_CD = provider.ZIP_CD,
+                STATE_CD = provider.STATE_CD,
+                //PHNE_NUM = provider.PHNE_NUM,
+                //FAX_PHNE_NUM = provider.FAX_PHNE_NUM,
+                ELGBLTY_SW = provider.ELGBLTY_SW,
+                CMPLNC_STUS_CD = provider.CMPLNC_STUS_CD,
+                ORGNL_PRTCPTN_DT = provider.ORGNL_PRTCPTN_DT,
+                CRTFCTN_DT = provider.CRTFCTN_DT,
+                TRMNTN_EXPRTN_DT = provider.TRMNTN_EXPRTN_DT,
+                //PGM_TRMNTN_CD = provider.PGM_TRMNTN_CD,
+                //ACRDTN_TYPE_CD = provider.ACRDTN_TYPE_CD,
+                //ACRDTN_EFCTV_DT = provider.ACRDTN_EFCTV_DT,
+                //ACRDTN_EXPRTN_DT = provider.ACRDTN_EXPRTN_DT,
+                //INTRMDRY_CARR_CD = provider.INTRMDRY_CARR_CD,
+                //Comment = provider.Comment
+
             });
 
             return View(ViewModels);
@@ -51,7 +70,26 @@ namespace LtcProviderData.Controllers
             Provider newProvider = new Provider()
             {
                 CCN = viewModel.CCN,
+                BED_CNT = viewModel.BED_CNT,
+                FAC_NAME = viewModel.FAC_NAME,
+                ST_ADR = viewModel.ST_ADR,
+                CITY_NAME = viewModel.CITY_NAME,
+                ZIP_CD = viewModel.ZIP_CD,
+                STATE_CD = viewModel.STATE_CD,
+                PHNE_NUM = viewModel.PHNE_NUM,
+                FAX_PHNE_NUM = viewModel.FAX_PHNE_NUM,
+                ELGBLTY_SW = viewModel.ELGBLTY_SW,
+                CMPLNC_STUS_CD = viewModel.CMPLNC_STUS_CD,
+                ORGNL_PRTCPTN_DT = viewModel.ORGNL_PRTCPTN_DT,
+                CRTFCTN_DT = viewModel.CRTFCTN_DT,
+                TRMNTN_EXPRTN_DT = viewModel.TRMNTN_EXPRTN_DT,
+                PGM_TRMNTN_CD = viewModel.PGM_TRMNTN_CD,
+                ACRDTN_TYPE_CD = viewModel.ACRDTN_TYPE_CD,
+                ACRDTN_EFCTV_DT = viewModel.ACRDTN_EFCTV_DT,
+                ACRDTN_EXPRTN_DT = viewModel.ACRDTN_EXPRTN_DT,
+                INTRMDRY_CARR_CD = viewModel.INTRMDRY_CARR_CD,
                 Comment = viewModel.Comment
+
             };
 
             _dbContext.Set<Provider>().Add(newProvider);
@@ -78,6 +116,24 @@ namespace LtcProviderData.Controllers
                 {
                     ID = SingleProvider.ID,
                     CCN = SingleProvider.CCN,
+                    BED_CNT = SingleProvider.BED_CNT,
+                    FAC_NAME = SingleProvider.FAC_NAME,
+                    ST_ADR = SingleProvider.ST_ADR,
+                    CITY_NAME = SingleProvider.CITY_NAME,
+                    ZIP_CD = SingleProvider.ZIP_CD,
+                    STATE_CD = SingleProvider.STATE_CD,
+                    PHNE_NUM = SingleProvider.PHNE_NUM,
+                    FAX_PHNE_NUM = SingleProvider.FAX_PHNE_NUM,
+                    ELGBLTY_SW = SingleProvider.ELGBLTY_SW,
+                    CMPLNC_STUS_CD = SingleProvider.CMPLNC_STUS_CD,
+                    ORGNL_PRTCPTN_DT = SingleProvider.ORGNL_PRTCPTN_DT,
+                    CRTFCTN_DT = SingleProvider.CRTFCTN_DT,
+                    TRMNTN_EXPRTN_DT = SingleProvider.TRMNTN_EXPRTN_DT,
+                    PGM_TRMNTN_CD = SingleProvider.PGM_TRMNTN_CD,
+                    ACRDTN_TYPE_CD = SingleProvider.ACRDTN_TYPE_CD,
+                    ACRDTN_EFCTV_DT = SingleProvider.ACRDTN_EFCTV_DT,
+                    ACRDTN_EXPRTN_DT = SingleProvider.ACRDTN_EXPRTN_DT,
+                    INTRMDRY_CARR_CD = SingleProvider.INTRMDRY_CARR_CD,
                     Comment = SingleProvider.Comment
                 };
                 return View(viewmodel);
@@ -136,7 +192,26 @@ namespace LtcProviderData.Controllers
             {
                 ID = provider.ID,
                 CCN = provider.CCN,
+                BED_CNT = provider.BED_CNT,
+                FAC_NAME = provider.FAC_NAME,
+                ST_ADR = provider.ST_ADR,
+                CITY_NAME = provider.CITY_NAME,
+                ZIP_CD = provider.ZIP_CD,
+                STATE_CD = provider.STATE_CD,
+                PHNE_NUM = provider.PHNE_NUM,
+                FAX_PHNE_NUM = provider.FAX_PHNE_NUM,
+                ELGBLTY_SW = provider.ELGBLTY_SW,
+                CMPLNC_STUS_CD = provider.CMPLNC_STUS_CD,
+                ORGNL_PRTCPTN_DT = provider.ORGNL_PRTCPTN_DT,
+                CRTFCTN_DT = provider.CRTFCTN_DT,
+                TRMNTN_EXPRTN_DT = provider.TRMNTN_EXPRTN_DT,
+                PGM_TRMNTN_CD = provider.PGM_TRMNTN_CD,
+                ACRDTN_TYPE_CD = provider.ACRDTN_TYPE_CD,
+                ACRDTN_EFCTV_DT = provider.ACRDTN_EFCTV_DT,
+                ACRDTN_EXPRTN_DT = provider.ACRDTN_EXPRTN_DT,
+                INTRMDRY_CARR_CD = provider.INTRMDRY_CARR_CD,
                 Comment = provider.Comment
+
             };
 
             return View(viewmodel);

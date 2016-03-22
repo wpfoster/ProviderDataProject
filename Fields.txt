@@ -1,0 +1,486 @@
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+   CCN                                               10   158   167  VARCHAR2
+     Description: Six or ten position identification number that is
+                  assigned to a certified provider.  This is the CMS
+                  Certification Number.
+     SAS Name:    PRVDR_NUM
+     COBOL Name:  PRVDR-NUM
+   Bed Count: Total                                  4    373   376  NUMBER
+     Description: Total number of beds in a provider, including those in
+                  non-participating or non-licensed areas.
+     SAS Name:    BED_CNT
+     COBOL Name:  BED-CNT
+   Facility Name                                     50   67    116  VARCHAR2
+     Description: Name of the provider certified to participate in the
+                  Medicare and/or Medicaid programs.
+     SAS Name:    FAC_NAME
+     COBOL Name:  FAC-NAME
+   Address: Street                                   50   178   227  VARCHAR2
+     Description: Street address where the provider is located.
+     SAS Name:    ST_ADR
+     COBOL Name:  ST-ADR
+   Address: City                                     28   15    42   VARCHAR2
+     Description: City in which the provider is physically located.
+     SAS Name:    CITY_NAME
+     COBOL Name:  CITY-NAME
+   Address: ZIP Code                                 5    251   255  VARCHAR2
+     Description: Five-digit ZIP code for a provider's physical address.
+     SAS Name:    ZIP_CD
+     COBOL Name:  ZIP-CD
+   State Abbreviation                                2    171   172  VARCHAR2
+     Description: Two-character state abbreviation.
+     SAS Name:    STATE_CD
+     COBOL Name:  STATE-CD
+     VALUES:      AK=ALASKA
+                  AL=ALABAMA
+                  AR=ARKANSAS
+                  AS=AMERICAN SAMOA
+                  AZ=ARIZONA
+                  CA=CALIFORNIA
+                  CN=CANADA
+                  CO=COLORADO
+                  CT=CONNECTICUT
+                  DC=DISTRICT OF COLUMBIA
+                  DE=DELAWARE
+                  FL=FLORIDA
+                  FN=INTERNATIONAL
+                  GA=GEORGIA
+                  GU=GUAM
+                  HI=HAWAII
+                  IA=IOWA
+                  ID=IDAHO
+                  IL=ILLINOIS
+                  IN=INDIANA
+                  KS=KANSAS
+                  KY=KENTUCKY
+                  LA=LOUISIANA
+                  MA=MASSACHUSETTS
+                  MD=MARYLAND
+                  ME=MAINE
+                  MI=MICHIGAN
+                  MN=MINNESOTA
+                  MO=MISSOURI
+                  MP=SAIPAN
+                  MS=MISSISSIPPI
+                  MT=MONTANA
+                  MX=MEXICO
+                  NC=NORTH CAROLINA
+                  ND=NORTH DAKOTA
+                  NE=NEBRASKA
+                  NH=NEW HAMPSHIRE
+                  NJ=NEW JERSEY
+                  NM=NEW MEXICO
+                  NV=NEVADA
+                  NY=NEW YORK
+                  OH=OHIO
+                  OK=OKLAHOMA
+                  OR=OREGON
+                  PA=PENNSYLVANIA
+                  PR=PUERTO RICO
+                  RI=RHODE ISLAND
+                  SC=SOUTH CAROLINA
+                  SD=SOUTH DAKOTA
+                  TN=TENNESSEE
+                  TX=TEXAS
+                  UT=UTAH
+                  VA=VIRGINIA
+                  VI=VIRGIN ISLANDS
+                  VT=VERMONT
+                  WA=WASHINGTON
+                  WI=WISCONSIN
+                  WV=WEST VIRGINIA
+                  WY=WYOMING
+   Telephone Number                                  10   228   237  VARCHAR2
+     Description: Telephone number of the provider.
+     SAS Name:    PHNE_NUM
+     COBOL Name:  PHNE-NUM
+   Fax Phone Number                                  10   454   463  VARCHAR2
+     Description: 10-digit fax phone number of the primary contact or the
+                  operator of the provider.
+     SAS Name:    FAX_PHNE_NUM
+     COBOL Name:  FAX-PHNE-NUM
+  Eligibility Indicator                             1    66    66   VARCHAR2
+     Description: Indicates if a facility is eligible to participate in the
+                  Medicare and/or Medicaid programs.
+     SAS Name:    ELGBLTY_SW
+     COBOL Name:  ELGBLTY-SW
+   Compliance: Status                                1    44    44   VARCHAR2
+     Description: Compliance status of a provider at the time of
+                  certification survey.
+     SAS Name:    CMPLNC_STUS_CD
+     COBOL Name:  CMPLNC-STUS-CD
+     VALUES:      A=IN COMPLIANCE
+                  B=NOT IN COMPLIANCE
+  Original Participation Date                       8    137   144  DATE
+     Description: Date a provider is first approved to provide Medicare
+                  and/or Medicaid services.
+     SAS Name:    ORGNL_PRTCPTN_DT
+     COBOL Name:  ORGNL-PRTCPTN-DT
+  Certification Date                                8    58    65   DATE
+     Description: Equal to the exit date of the initial visit of the Health
+                  survey for certifications completed after July 28, 2012.
+                  For certifications prior to that date, the certification
+                  date is equal to the exit date of the initial visit of
+                  the Health survey or LSC survey, whichever is later.
+     SAS Name:    CRTFCTN_DT
+     COBOL Name:  CRTFCTN-DT
+   Termination or Expiration Date                    8    240   247  DATE
+     Description: Date the provider was terminated.  For CLIA providers,
+                  date the laboratory's certificate was terminated or the
+                  expiration date of the current CLIA certificate.
+     SAS Name:    TRMNTN_EXPRTN_DT
+     COBOL Name:  TRMNTN-EXPRTN-DT
+   Termination Code                                  2    238   239  VARCHAR2
+     Description: Indicates the current termination status for the
+                  provider.
+     SAS Name:    PGM_TRMNTN_CD
+     COBOL Name:  PGM-TRMNTN-CD
+     VALUES:      00=ACTIVE PROVIDER
+                  01=VOLUNTARY-MERGER, CLOSURE
+                  02=VOLUNTARY-DISSATISFACTION WITH REIMBURSEMENT
+                  03=VOLUNTARY-RISK OF INVOLUNTARY TERMINATION
+                  04=VOLUNTARY-OTHER REASON FOR WITHDRAWAL
+                  05=INVOLUNTARY-FAILURE TO MEET HEALTH/SAFETY REQ
+                  06=INVOLUNTARY-FAILURE TO MEET AGREEMENT
+                  07=OTHER-PROVIDER STATUS CHANGE
+                  08=NONPAYMENT OF FEES - CLIA Only
+                  09=REV/UNSUCCESSFUL PARTICIPATION IN PT - CLIA Only
+                  10=REV/OTHER REASON - CLIA Only
+                  11=INCOMPLETE CLIA APPLICATION INFORMATION - CLIA Only
+                  12=NO LONGER PERFORMING TESTS - CLIA Only
+                  13=MULTIPLE TO SINGLE SITE CERTIFICATE - CLIA Only
+                  14=SHARED LABORATORY - CLIA Only
+                  15=FAILURE TO RENEW WAIVER PPM CERTIFICATE - CLIA Only
+                  16=DUPLICATE CLIA NUMBER - CLIA Only
+                  17=MAIL RETURNED NO FORWARD ADDRESS CERT ENDED - CLIA Only
+                  20=NOTIFICATION BANKRUPTCY - CLIA Only
+                  33=ACCREDITATION NOT CONFIRMED - CLIA Only
+                  80=AWAITING STATE APPROVAL
+                  99=OIG ACTION - DO NOT ACTIVATE - CLIA Only
+   Accreditation Type Code                           1    283   283  VARCHAR2
+     Description: Indicates an accrediting organization deeming the
+                  provider.  If a provider is deemed by multiple
+                  accrediting organizations then the accrediting
+                  organization with the earliest active deeming effective
+                  date is displayed in this field.
+     SAS Name:    ACRDTN_TYPE_CD
+     COBOL Name:  ACRDTN-TYPE-CD
+     VALUES:      0=NOT ACCREDITED
+                  1=JC
+                  2=AOA/HFAP
+                  3=DNV GL
+                  9=CIHQ
+   Accreditation Effective Date                      8    267   274  DATE
+     Description: Effective date of the period of accreditation associated
+                  with this certification.
+     SAS Name:    ACRDTN_EFCTV_DT
+     COBOL Name:  ACRDTN-EFCTV-DT
+   Accreditation Expiration Date                     8    275   282  DATE
+     Description: Expiration date of the period of accreditation associated
+                  with this certification.
+     SAS Name:    ACRDTN_EXPRTN_DT
+     COBOL Name:  ACRDTN-EXPRTN-DT
+ Medicare Administrative Contractor (MAC) or       5    117   121  VARCHAR2
+   Intermediary or Carrier Code
+     Description: Number assigned to the Medicare Administrative
+                  Contractor, intermediary or carrier servicing this
+                  provider.
+     SAS Name:    INTRMDRY_CARR_CD
+     COBOL Name:  INTRMDRY-CARR-CD
+     VALUES:      00000=DUMMY FOR MEDICAID HHA
+                  00010=BLUE CROSS (ALABAMA)
+                  00011=CAHABA
+                  00020=BLUE CROSS (ARKANSAS)
+                  00040=BLUE CROSS (CALIFORNIA)
+                  00060=BLUE CROSS (CONNECTICUT)
+                  00070=BLUE CROSS (DELAWARE)
+                  00090=BLUE CROSS (FLORIDA)
+                  00101=BLUE CROSS (GEORGIA)
+                  00121=HEALTH CARE SERVICE CORPORATION
+                  00122=HCSC - MICHIGAN
+                  00123=HCSC OF MICHIGAN
+                  00130=NATIONAL GOVERNMENT SERVICES
+                  00131=NATIONAL GOVERNMENT SERVICES
+                  00140=BLUE CROSS (IOWA/SOUTH DAKOTA)
+                  00150=BLUE CROSS (KANSAS)
+                  00160=NATIONAL GOVERNMENT SERVICES
+                  00180=NATIONAL GOVERNMENT SERVICES
+                  00181=NATIONAL GOVERNMENT SERVICES
+                  00190=BLUE CROSS (MARYLAND)
+                  00200=BLUE CROSS (MASSACHUSETTS)
+                  00210=BLUE CROSS (MICHIGAN)
+                  00220=BLUE CROSS (MINNESOTA)
+                  00230=BLUE CROSS (MISSISSIPPI)
+                  00231=BLUE CROSS (LOUISIANA)
+                  00233=PINNACLE
+                  00241=BLUE CROSS (MISSOURI)
+                  00260=BLUE CROSS (NEBRASKA)
+                  00270=NATIONAL GOVERNMENT SERVICES
+                  00280=BLUE CROSS (NEW JERSEY)
+                  00290=BLUE CROSS (NEW MEXICO)
+                  00308=NATIONAL GOVERNMENT SERVICES
+                  00310=BLUE CROSS (NORTH CAROLINA)
+                  00320=NORIDIAN PART A
+                  00322=NORIDIAN PART A (AK/WA)
+                  00323=NORIDIAN PART A (ID/OR)
+                  00325=NORIDIAN
+                  00332=NATIONAL GOVERNMENT SERVICES
+                  00340=BLUE CROSS (OKLAHOMA)
+                  00350=BLUE CROSS (OREGON)
+                  00351=BLUE CROSS (OREGON) (IDAHO CLAIMS)
+                  00362=BLUE CROSS (INDEPENDENCE)
+                  00363=BLUE CROSS (WESTERN PENNSYLVANIA)
+                  00366=HIGHMARK MEDICARE SERVICES
+                  00370=BLUE CROSS (RHODE ISLAND)
+                  00380=BLUE CROSS (SOUTH CAROLINA)
+                  00390=BLUE CROSS (TENNESSEE)
+                  00400=BLUE CROSS (TEXAS)
+                  00410=BLUE CROSS (UTAH)
+                  00423=BLUE CROSS (VIRGINIA/WEST VA)
+                  00430=BLUE CROSS (WASHINGTON & ALASKA)
+                  00450=NATIONAL GOVERNMENT SERVICES
+                  00452=NATIONAL GOVERNMENT SERVICES
+                  00453=NATIONAL GOVERNMENT SERVICES
+                  00454=NATIONAL GOVERNMENT SERVICES
+                  00456=NATIONAL GOVERNMENT SERVICES
+                  00468=BLUE CROSS (NORTH CAROLINA FOR PR)
+                  00510=BLUE SHIELD (ALABAMA)
+                  00511=CAHABA
+                  00512=CAHABA
+                  00520=BLUE SHIELD (ARKANSAS)
+                  00528=BLUE SHIELD (ARKANSAS/LOUISIANA)
+                  00542=BLUE SHIELD (CALIFORNIA)
+                  00550=BLUE SHIELD (COLORADO)
+                  00570=BLUE SHIELD (DELAWARE)
+                  00580=BLUE SHIELD (DISTRICT OF COLUMBIA)
+                  00590=BLUE SHIELD (FLORIDA)
+                  00621=BLUE SHIELD (ILLINOIS)
+                  00630=NATIONAL GOVERNMENT SERVICES
+                  00640=BLUE SHIELD (IOWA)
+                  00650=BLUE SHIELD (KANSAS)
+                  00655=BLUE SHIELD (KANSAS/NEBRASKA)
+                  00660=NATIONAL GOVERNMENT SERVICES
+                  00690=BLUE SHIELD (MARYLAND)
+                  00700=BLUE SHIELD (MASSACHUSETTS)
+                  00710=BLUE SHIELD (MICHIGAN)
+                  00720=BLUE SHIELD (MINNESOTA)
+                  00740=BLUE SHIELD (KANSAS CITY)
+                  00770=BLUE SHIELD (NEW HAMPSHIRE/VERMONT)
+                  00780=BLUE SHIELD (TRI-STATE)
+                  00801=BLUE SHIELD (BUFFALO)
+                  00803=NATIONAL GOVERNMENT SERVICES
+                  00805=NATIONAL GOVERNMENT SERVICES
+                  00821=NORIDIAN
+                  00824=NORIDIAN GVT SERVICES (CO)
+                  00826=NORIDIAN GVT SERVICES (IA)
+                  00831=NORIDIAN GVT SERVICES (AK)
+                  00832=NORIDIAN GVT SERVICES (AZ)
+                  00833=NORIDIAN GVT SERVICES (HI)
+                  00834=NORIDIAN GVT SERVICES (NV)
+                  00835=NORIDIAN GVT SERVICES (OR)
+                  00836=NORIDIAN GVT SERVICES (WA)
+                  00860=BLUE SHIELD (PENNSYLVANIA/NEW JERSEY)
+                  00865=BLUE SHIELD (PENNSYLVANIA)
+                  00870=BLUE SHIELD (RHODE ISLAND)
+                  00880=BLUE SHIELD (SOUTH CAROLINA)
+                  00883=PALMETTO GBA PART B
+                  00884=PALMETTO GBA
+                  00889=NORIDIAN GVT SERVICES (SD)
+                  00900=BLUE SHIELD (TEXAS)
+                  00901=TRAILBLAZERS HEALTH ENTERPRISES
+                  00904=TRAILBLAZER
+                  00910=BLUE SHIELD (UTAH)
+                  00930=BLUE SHIELD (WASHINGTON)
+                  00951=WISCONSIN PHYSICIANS SERVICE
+                  00952=WPS - ILLINOIS
+                  00953=WPS - MICHIGAN
+                  00954=WI PHYSICIAN SERVICES - MN
+                  00973=BLUE SHIELD (PUERTO RICO)
+                  00974=BLUE SHIELD (VIRGIN ISLANDS)
+                  01010=AETNA (PEORIA)
+                  01020=AETNA (ALASKA)
+                  01030=AETNA (ARIZONA)
+                  01040=AETNA (GEORGIA)
+                  01101=PALMETTO (CALIFORNIA)
+                  01102=PALMETTO (CALIFORNIA (NORTH)
+                  01111=Noridian (CA)
+                  01112=Noridian (NF)
+                  01120=AETNA (HAWAII)
+                  01182=Noridian (SF)
+                  01192=PALMETTO (CALIFORNIA SOUTH)
+                  01201=PALMETTO (HAWAII)
+                  01202=PALMETTO (HAWAII)
+                  01211=Noridian (AS, GU, HI)
+                  01212=Noridian (AS, GU, HI)
+                  01290=AETNA (NEVADA)
+                  01301=PALMETTO (NEVADA)
+                  01302=PALMETTO (NEVADA)
+                  01311=Noridian (NV)
+                  01312=Noridian (NV)
+                  01360=AETNA (NEW MEXICO)
+                  01370=AETNA (OKLAHOMA)
+                  01380=AETNA (OREGON)
+                  01390=AETNA (WASHINGTON)
+                  01901=PALMETTO GBA
+                  01902=PALMETTO GBA
+                  01911=Noridian (AS, GU, HI, NV)
+                  02050=OCCIDENTAL (CALIFORNIA)
+                  02101=Noridian AK
+                  02102=Noridian AK
+                  02201=Noridian ID
+                  02202=Noridian ID
+                  02301=Noridian OR
+                  02302=Noridian OR
+                  02401=Noridian WA
+                  02402=Noridian WA
+                  03001=NORIDIAN ADMIN SERVICES
+                  03101=NORIDAN (ARIZONA)
+                  03102=NORIDAN (ARIZONA)
+                  03201=NORIDAN (MONTANA)
+                  03202=NORIDAN (MONTANA)
+                  03301=NORDIAN (NORTH DAKOTA)
+                  03302=NORDIAN (NORTH DAKOTA)
+                  03401=NORIDIAN (SOUTH DAKOTA)
+                  03402=NORIDIAN (SOUTH DAKOTA)
+                  03501=NORIDIAN (UTAH)
+                  03502=NORIDIAN (UTAH)
+                  03601=NORIDIAN (WYOMING)
+                  03602=NORIDIAN (WYOMING)
+                  04001=TRAILBLAZER
+                  04101=TRAILBLAZER (COLORADO)
+                  04102=TRAILBLAZER (COLORADO)
+                  04111=NOVITAS (COLORADO)
+                  04112=NOVITAS (COLORADO)
+                  04201=TRAILBLAZER (NEW MEXICO)
+                  04202=TRAILBLAZER (NEW MEXICO)
+                  04211=NOVITAS (NEW MEXICO)
+                  04212=NOVITAS (NEW MEXICO)
+                  04301=TRAILBLAZER (OKLAHOMA)
+                  04302=TRAILBLAZER (OKLAHOMA)
+                  04311=NOVITAS (OKLAHOMA)
+                  04312=NOVITAS (OKLAHOMA)
+                  04401=TRAILBLAZER (TEXAS)
+                  04402=TRAILBLAZER (TEXAS)
+                  04411=NOVITAS (TEXAS)
+                  04412=NOVITAS (TEXAS)
+                  04901=MUTUAL LEGACY
+                  04911=NOVITAS
+                  05101=WPS (IOWA)
+                  05102=WPS (IOWA)
+                  05130=EQICOR (IDAHO)
+                  05201=WPS (KANSAS)
+                  05202=WPS (KANSAS)
+                  05301=WPS (MISSOURI)
+                  05302=WPS (MISSOURI WEST)
+                  05392=WPS (MISSOURI EAST)
+                  05401=WPS (NEBRASKA)
+                  05402=WPS (NEBRASKA)
+                  05440=EQICOR (TENNESSEE)
+                  05535=EQICOR (NORTH CAROLINA)
+                  05901=WISCONSIN PHYSICIANS SERVICE
+                  06001=NGS (WI)
+                  06004=National Govt Serv HHH
+                  06101=NGS (IL)
+                  06102=NGS (IL)
+                  06201=NGS (MN)
+                  06202=NGS (MN)
+                  06301=NGS (WI)
+                  06302=NGS (WI)
+                  07101=Novitas AR
+                  07102=Novitas AR
+                  07201=Novitas LA
+                  07202=Novitas LA
+                  07301=Novitas MS
+                  07302=Novitas MS
+                  08101=WPS IN
+                  08102=WPS IN
+                  08201=WPS MI
+                  08202=WPS MI
+                  09101=FIRST COAST (FLORIDA)
+                  09102=FIRST COAST (FLORIDA)
+                  09201=FIRST COAST (PUERTO RICO/VIRGIN ISLANDS)
+                  09202=FIRST COAST (PUERTO RICO)
+                  09302=FIRST COAST (VIRGIN ISLANDS)
+                  10071=TRAVELERS (RRB)
+                  10101=CAHABA GBA (AL)
+                  10102=CAHABA GBA (AL)
+                  10201=CAHABA GBA (GA)
+                  10202=CAHABA GBA (GA)
+                  10230=TRAVELERS (CONNECTICUT)
+                  10240=TRAVELERS (MINNESOTA)
+                  10250=TRAVELERS (MISSISSIPPI)
+                  10301=CAHABA GBA (TN)
+                  10302=CAHABA GBA (TN)
+                  10490=TRAVELERS (VIRGINIA)
+                  10492=TRAVELERS - VIRGINIA SPECIAL PROJECT
+                  11004=PALMETTO HHH C
+                  11201=PALMETTO GBA (SC)
+                  11202=PALMETTO GBA (SC)
+                  11260=GENERAL AMERICAN
+                  11301=PALMETTO GBA (VA)
+                  11302=PALMETTO GBA (VA)
+                  11401=PALMETTO GBA (WV)
+                  11402=PALMETTO GBA (WV)
+                  11501=PALMETTO GBA (NC)
+                  11502=PALMETTO GBA (NC)
+                  12101=Novitas DE
+                  12102=Novitas DE
+                  12201=Novitas DC
+                  12202=Novitas DC
+                  12301=Novitas MD
+                  12302=Novitas MD
+                  12401=Novitas NJ
+                  12402=Novitas NJ
+                  12501=Novitas PA
+                  12502=Novitas PA
+                  12901=Novitas Solutions DC, DE, MD, PA
+                  12902=HIGHMARK
+                  13101=NATIONAL GOVT SERVICES (CONNECTICUT)
+                  13102=NATIONAL GOVT SERVICES (CONNECTICUT)
+                  13201=NATIONAL GOVT SERVICES (NEW YORK)
+                  13202=NATIONAL GOVT SERVICES (NEW YORK - EMPIRE)
+                  13282=NGS (UN)
+                  13292=NGS (QN)
+                  14004=NATIONAL HERITAGE (HHA - A)
+                  14014=NGS (HHA)
+                  14101=NATIONAL HERITAGE (MAINE)
+                  14102=NATIONAL HERITAGE (MAINE)
+                  14111=NGS (ME)
+                  14112=NGS (ME)
+                  14201=NATIONAL HERITAGE (MASSACHUSETTS)
+                  14202=NATIONAL HERITAGE (MASSACHUSETTS)
+                  14211=NGS (MA)
+                  14212=NGS (MA)
+                  14301=NATIONAL HERITAGE (NEW HAMPSHIRE)
+                  14302=NATIONAL HERITAGE (NEW HAMPSHIRE)
+                  14311=NGS (NH)
+                  14312=NGS (NH)
+                  14330=GROUP HEALTH INC (NEW YORK)
+                  14401=NATIONAL HERITAGE (RHODE ISLAND)
+                  14402=NATIONAL HERITAGE (RHODE ISLAND)
+                  14411=NGS (RI)
+                  14412=NGS (RI)
+                  14501=NATIONAL HERITAGE (VERMONT)
+                  14502=NATIONAL HERITAGE (VERMONT)
+                  14511=NGS (VT)
+                  14512=NGS (VT)
+                  15004=CGS Administrators HHH
+                  15101=CGS (KENTUCKY)
+                  15102=CGS (KENTUCKY)
+                  15201=CGS (OHIO)
+                  15202=CGS (OHIO)
+                  16360=NATIONWIDE (OHIO)
+                  16510=NATIONWIDE (WEST VIRGINIA)
+                  17120=HAWAII MEDICAL SERVICE ASSOCIATION
+                  21200=MASSACHUSETTS/MAINE
+                  31142=NATIONAL HERITAGE INSURANCE CO (MAINE)
+                  31143=NATIONAL HERITAGE INSURANCE CO
+                  31144=NATIONAL HERITAGE INSURANCE CO
+                  50333=TRAVELERS (NEW YORK)
+                  51051=AETNA (PETALUMA)
+                  51070=AETNA (FARMINGTON)
+                  51100=AETNA (CLEARWATER)
+                  51140=AETNA (PEORIA)
+                  51390=AETNA (FORT WASHINGTON)
+                  52280=MUTUAL OF OMAHA
+                  57400=COOPERATIVA (PUERTO RICO)

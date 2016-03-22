@@ -14,11 +14,13 @@ CRUD to input all data in source data and additional comment field
 
 plan:
 
-+Begin with MVC 4.6 template
+DONE+Begin with MVC 4.6 template
 
-+add CRUD functionaality for and DB with ID, CMS Certification Number (CCN) and comment
+DONE+add CRUD functionaality for and DB with ID, CMS Certification Number (CCN) and comment
 
 +expand model to account for additional fields
+scaling back numbe rof fields due to time remaining
+
 
 +add validation for all fields
 
