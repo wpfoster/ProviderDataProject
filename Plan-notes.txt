@@ -20,6 +20,11 @@ DONE+add CRUD functionaality for and DB with ID, CMS Certification Number (CCN) 
 
 +expand model to account for additional fields
 scaling back numbe rof fields due to time remaining
+Total Prop list:
+ID
+CCN
+CITY-NAME
+
 
 
 +add validation for all fields
