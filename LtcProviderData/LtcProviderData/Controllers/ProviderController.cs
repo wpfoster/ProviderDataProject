@@ -172,7 +172,7 @@ namespace LtcProviderData.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "ID,CCN,Comment")] Provider provider)
+        public ActionResult Edit([Bind(Include = "ID,CCN,BED_CNT,FAC_NAME,ST_ADR,CITY_NAME,ZIP_CD,STATE_CD,PHNE_NUM,FAX_PHNE_NUM,ELGBLTY_SW,CMPLNC_STUS_CD,ORGNL_PRTCPTN_DT,CRTFCTN_DT,TRMNTN_EXPRTN_DT,PGM_TRMNTN_CD,ACRDTN_TYPE_CD,ACRDTN_EFCTV_DT,ACRDTN_EXPRTN_DT,INTRMDRY_CARR_CD,Comment")] Provider provider)
         {
             if (ModelState.IsValid)
             {
