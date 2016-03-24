@@ -18,7 +18,7 @@ namespace LtcProviderData.Models
 
         //Facility Name
         public string FAC_NAME { get; set; }
-
+        
         //Address: Street
         //public string ST_ADR { get; set; }
 

@@ -4,11 +4,12 @@
 }
 
 <h2>Index</h2>
-<div>This is an index of Providers</div>
+<div>This is a list of all stored providers with a subset of stored provider metadata. Provider data may be deleted or edited from the detail view.</div>
 
 <table class="table">
     <thead>
     <tr>
+        <th></th>
         <th>ID</th>
         <th>CCN</th>
         <th>BED_CNT</th>
@@ -21,6 +22,7 @@
         <th>CRTFCTN_DT</th>
         <th>TRMNTN_EXPRTN_DT</th>
         
+        
 
         
     </tr>
@@ -30,6 +32,7 @@
         @foreach (var ProviderIndexViewModel in Model)
         {
             <tr>
+                <td><div><p><a class="btn btn-success" href=@Url.Action("Detail","Provider",new { id = ProviderIndexViewModel.ID})>Details</a></p></div> </td>
                 <td>@ProviderIndexViewModel.ID</td>
                 <td>@ProviderIndexViewModel.CCN</td>
                 <td>@ProviderIndexViewModel.BED_CNT</td>

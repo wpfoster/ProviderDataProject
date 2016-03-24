@@ -3,7 +3,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit Provider</h2>
+<h2>Edit Provider: @Model.FAC_NAME</h2>
 @using (Html.BeginForm())
 {
     <div>
@@ -133,6 +133,8 @@
         @Html.ValidationMessageFor(m => m.Comment)
     </div>
 
-    <button type="submit">Update</button>
+    <div><p><button class="btn btn-primary" type="submit">Update</button></p></div>
+
+    <div><p><a class="btn btn-success" href=@Url.Action("Detail","Provider",new { id = Model.ID})>Return to Details</a></p></div>
 
 }

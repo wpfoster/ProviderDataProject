@@ -3,7 +3,7 @@
     ViewBag.Title = "Provider Detail";
 }
 
-<h2>Provider Detail</h2>
+<h2>Provider Details for @Model.FAC_NAME</h2>
 <div>
     @Html.LabelFor(m => m.ID)
     @Model.ID
@@ -109,3 +109,6 @@
     @Html.LabelFor(m => m.Comment)
     @Model.Comment
 </div>
+
+<div><p><a class="btn btn-primary" href=@Url.Action("edit","Provider",new { id = Model.ID})>Edit &raquo;</a></p></div>
+<div><p><a class="btn btn-danger" href=@Url.Action("delete","Provider", new { id = Model.ID})>Delete &raquo;</a></p></div>

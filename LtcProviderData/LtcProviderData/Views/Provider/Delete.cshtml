@@ -3,8 +3,8 @@
     ViewBag.Title = "Delete Provider";
 }
 
-<h2>Provider Detail</h2>
-<h3>Confirm Deletion</h3>
+<h2>Delete Provider @Model.FAC_NAME</h2>
+<h3>Confirm Deletion Below</h3>
 <div>
     @Html.LabelFor(m => m.ID)
     @Model.ID
@@ -28,7 +28,8 @@
 
 @using (Html.BeginForm()) {
 <diiv>
-    <button type="submit" value="Delete">Delete</button>
+    <p><button class="btn btn-danger" type="submit" value="Delete">Delete</button></p>
 </diiv>
+<div><p><a class="btn btn-success" href=@Url.Action("Detail","Provider",new { id = Model.ID})>Return to Details</a></p></div>
 
 }
