@@ -174,11 +174,13 @@ namespace LtcProviderData.Controllers
         [HttpPost]
         public ActionResult Edit([Bind(Include = "ID,CCN,BED_CNT,FAC_NAME,ST_ADR,CITY_NAME,ZIP_CD,STATE_CD,PHNE_NUM,FAX_PHNE_NUM,ELGBLTY_SW,CMPLNC_STUS_CD,ORGNL_PRTCPTN_DT,CRTFCTN_DT,TRMNTN_EXPRTN_DT,PGM_TRMNTN_CD,ACRDTN_TYPE_CD,ACRDTN_EFCTV_DT,ACRDTN_EXPRTN_DT,INTRMDRY_CARR_CD,Comment")] Provider provider)
         {
+
+
             if (ModelState.IsValid)
             {
                 _dbContext.Entry(provider).State = System.Data.Entity.EntityState.Modified;
                 _dbContext.SaveChanges();
-                return RedirectToAction("index");
+                return RedirectToAction("Detail", new { id = provider.ID});
             }
             return View(provider);
         }
@@ -187,35 +189,45 @@ namespace LtcProviderData.Controllers
         [HttpGet]
         public ActionResult Delete(int? id)
         {
-            Provider provider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
-            var viewmodel = new ProviderDeleteViewModel()
+
+            if (id == null)
             {
-                ID = provider.ID,
-                CCN = provider.CCN,
-                BED_CNT = provider.BED_CNT,
-                FAC_NAME = provider.FAC_NAME,
-                ST_ADR = provider.ST_ADR,
-                CITY_NAME = provider.CITY_NAME,
-                ZIP_CD = provider.ZIP_CD,
-                STATE_CD = provider.STATE_CD,
-                PHNE_NUM = provider.PHNE_NUM,
-                FAX_PHNE_NUM = provider.FAX_PHNE_NUM,
-                ELGBLTY_SW = provider.ELGBLTY_SW,
-                CMPLNC_STUS_CD = provider.CMPLNC_STUS_CD,
-                ORGNL_PRTCPTN_DT = provider.ORGNL_PRTCPTN_DT,
-                CRTFCTN_DT = provider.CRTFCTN_DT,
-                TRMNTN_EXPRTN_DT = provider.TRMNTN_EXPRTN_DT,
-                PGM_TRMNTN_CD = provider.PGM_TRMNTN_CD,
-                ACRDTN_TYPE_CD = provider.ACRDTN_TYPE_CD,
-                ACRDTN_EFCTV_DT = provider.ACRDTN_EFCTV_DT,
-                ACRDTN_EXPRTN_DT = provider.ACRDTN_EXPRTN_DT,
-                INTRMDRY_CARR_CD = provider.INTRMDRY_CARR_CD,
-                Comment = provider.Comment
+                return HttpNotFound();
+            }
+            else
+            {
 
-            };
 
-            return View(viewmodel);
 
+                Provider provider = _dbContext.Set<Provider>().Single(Provider => Provider.ID == id);
+                var viewmodel = new ProviderDeleteViewModel()
+                {
+                    ID = provider.ID,
+                    CCN = provider.CCN,
+                    BED_CNT = provider.BED_CNT,
+                    FAC_NAME = provider.FAC_NAME,
+                    ST_ADR = provider.ST_ADR,
+                    CITY_NAME = provider.CITY_NAME,
+                    ZIP_CD = provider.ZIP_CD,
+                    STATE_CD = provider.STATE_CD,
+                    PHNE_NUM = provider.PHNE_NUM,
+                    FAX_PHNE_NUM = provider.FAX_PHNE_NUM,
+                    ELGBLTY_SW = provider.ELGBLTY_SW,
+                    CMPLNC_STUS_CD = provider.CMPLNC_STUS_CD,
+                    ORGNL_PRTCPTN_DT = provider.ORGNL_PRTCPTN_DT,
+                    CRTFCTN_DT = provider.CRTFCTN_DT,
+                    TRMNTN_EXPRTN_DT = provider.TRMNTN_EXPRTN_DT,
+                    PGM_TRMNTN_CD = provider.PGM_TRMNTN_CD,
+                    ACRDTN_TYPE_CD = provider.ACRDTN_TYPE_CD,
+                    ACRDTN_EFCTV_DT = provider.ACRDTN_EFCTV_DT,
+                    ACRDTN_EXPRTN_DT = provider.ACRDTN_EXPRTN_DT,
+                    INTRMDRY_CARR_CD = provider.INTRMDRY_CARR_CD,
+                    Comment = provider.Comment
+
+                };
+
+                return View(viewmodel);
+            }
         }
 
         [HttpPost, ActionName("Delete")]
